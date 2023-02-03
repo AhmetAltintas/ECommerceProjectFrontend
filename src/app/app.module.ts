@@ -17,6 +17,7 @@ import { CartSummaryComponent } from './components/public/layouts/cart-summary/c
 import { ProductAddComponent } from './components/admin/pages/product-add/product-add.component';
 import { LoginComponent } from './components/public/pages/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { ProductImageForBaseGridComponent } from './components/public/layouts/product-image-for-base-grid/product-image-for-base-grid.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     CartSummaryComponent,
     ProductAddComponent,
     LoginComponent,
+    ProductImageForBaseGridComponent,
   ],
   imports: [
     BrowserModule,
