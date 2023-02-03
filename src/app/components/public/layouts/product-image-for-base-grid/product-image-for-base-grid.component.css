@@ -1,0 +1,10 @@
+.image{
+    position:absolute;
+    right:50px;
+    top:10px;
+}
+
+.image img{
+    height: 80px;
+    object-fit: cover;
+}

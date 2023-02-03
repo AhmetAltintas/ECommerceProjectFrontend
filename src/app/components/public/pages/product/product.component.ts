@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Product } from 'src/app/models/product';
+import { ProductDetailDto } from 'src/app/models/entities/dtos/productDetailDto';
+import { Product } from 'src/app/models/entities/product';
+import { ProductImage } from 'src/app/models/entities/productImage';
 import { CartService } from 'src/app/services/cart.service';
+import { ProductImageService } from 'src/app/services/product-image.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -11,35 +14,39 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product.component.css'],
 })
 export class ProductComponent implements OnInit {
-  products: Product[] = [];
+  
+  currentProduct: ProductDetailDto;
+  products: ProductDetailDto[];
   dataLoaded = false;
   filterText="";
 
-  constructor(private productService:ProductService, 
+  constructor(
+    private productService:ProductService, 
     private activatedRoute:ActivatedRoute,
     private toastrService:ToastrService,
-    private cartService:CartService) {}
+    private cartService:CartService,
+    ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
       if(params["categoryId"]){
-        this.getProductsByCategory(params["categoryId"])
+        this.getProductsByCategoryId(params["categoryId"])
       }
       else{
-        this.getProducts()
+        this.getProductDetails()
       }
     })
   }
 
-  getProducts() {
-    this.productService.getProducts().subscribe(response=>{
+  getProductDetails() {
+    this.productService.getProductDetails().subscribe(response=>{      
       this.products = response.data;
       this.dataLoaded = true;
     })
   }
 
-  getProductsByCategory(categoryId:number) {
-    this.productService.getProductsByCategory(categoryId).subscribe(response=>{
+  getProductsByCategoryId(categoryId:number) {
+    this.productService.getProductDetailsByCategory(categoryId).subscribe(response=>{
       this.products = response.data;
       this.dataLoaded = true;
     })

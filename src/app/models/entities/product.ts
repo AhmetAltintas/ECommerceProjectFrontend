@@ -4,5 +4,4 @@ export interface Product{
     productName:string;
     unitPrice:number;
     unitsInStock:number;
-
 }
