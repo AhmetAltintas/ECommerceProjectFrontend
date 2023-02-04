@@ -19,4 +19,12 @@ export class RouterService {
   loginPage(){
     this.router.navigate(["login"])
   }
+
+  homePage(){
+    this.router.navigate([""])
+  }
+
+  profilePage(){ 
+    this.router.navigate(["profile"])
+  }
 }

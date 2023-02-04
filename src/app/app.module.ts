@@ -23,6 +23,16 @@ import { CommonChildComponentBaseComponent } from './components/public/bases/com
 import { PublicChildComponentBaseComponent } from './components/public/bases/public-child-component-base/public-child-component-base.component';
 import { UserChildComponentBaseComponent } from './components/user/bases/user-child-component-base/user-child-component-base.component';
 import { RegisterComponent } from './components/public/pages/register/register.component';
+import { HomePageButtonComponent } from './components/public/layouts/router-buttons/home-page-button/home-page-button.component';
+import { LoginPageButtonComponent } from './components/public/layouts/router-buttons/login-page-button/login-page-button.component';
+import { RegisterPageButtonComponent } from './components/public/layouts/router-buttons/register-page-button/register-page-button.component';
+import { AccountOptionsComponent } from './components/user/layouts/account-options/account-options.component';
+import { LogoutButtonComponent } from './components/user/layouts/router-buttons/logout-button/logout-button.component';
+import { ProfilePageButtonComponent } from './components/user/layouts/router-buttons/profile-page-button/profile-page-button.component';
+import { ProfileComponent } from './components/user/pages/profile/profile.component';
+import { UpdateEmailComponent } from './components/user/layouts/updates/update-email/update-email.component';
+import { UpdateFirstAndLastNameComponent } from './components/user/layouts/updates/update-first-and-last-name/update-first-and-last-name.component';
+import { UpdatePasswordComponent } from './components/user/layouts/updates/update-password/update-password.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +51,16 @@ import { RegisterComponent } from './components/public/pages/register/register.c
     PublicChildComponentBaseComponent,
     UserChildComponentBaseComponent,
     RegisterComponent,
+    HomePageButtonComponent,
+    LoginPageButtonComponent,
+    RegisterPageButtonComponent,
+    AccountOptionsComponent,
+    LogoutButtonComponent,
+    ProfilePageButtonComponent,
+    ProfileComponent,
+    UpdateEmailComponent,
+    UpdateFirstAndLastNameComponent,
+    UpdatePasswordComponent,
   ],
   imports: [
     BrowserModule,
