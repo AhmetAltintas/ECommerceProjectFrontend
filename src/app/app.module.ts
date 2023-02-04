@@ -22,6 +22,7 @@ import { AdminChildComponentBaseComponent } from './components/admin/bases/admin
 import { CommonChildComponentBaseComponent } from './components/public/bases/common-child-component-base/common-child-component-base.component';
 import { PublicChildComponentBaseComponent } from './components/public/bases/public-child-component-base/public-child-component-base.component';
 import { UserChildComponentBaseComponent } from './components/user/bases/user-child-component-base/user-child-component-base.component';
+import { RegisterComponent } from './components/public/pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { UserChildComponentBaseComponent } from './components/user/bases/user-ch
     CommonChildComponentBaseComponent,
     PublicChildComponentBaseComponent,
     UserChildComponentBaseComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

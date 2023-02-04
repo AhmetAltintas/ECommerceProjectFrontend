@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { FormIsMissing } from 'src/app/models/constants/messages';
 import { AuthService } from 'src/app/services/auth.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { RouterService } from 'src/app/services/router.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +16,9 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private localStorageService: LocalStorageService,
+    private routerService: RouterService
   ) {}
 
   ngOnInit(): void {
@@ -29,19 +34,22 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
       let loginModel = Object.assign({}, this.loginForm.value);
-
       this.authService.login(loginModel).subscribe(
         (response) => {
           this.toastrService.info(response.message);
-          localStorage.setItem('token', response.data.token);
+          this.localStorageService.save("token", response.data.token)
+          
+          setTimeout(()=> {window.location.reload();},500)
         },
         (responseError) => {
-          console.log(responseError.error);
-          this.toastrService.error(responseError.error);
+          this.toastrService.error(responseError.error.message);
         }
       );
-    }
+    }else this.toastrService.error(FormIsMissing)
+  }
+
+  routeToRegisterPage(){
+    this.routerService.registerPage();
   }
 }
