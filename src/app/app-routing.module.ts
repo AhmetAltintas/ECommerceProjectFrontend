@@ -5,6 +5,7 @@ import { ProductAddComponent } from './components/admin/pages/product-add/produc
 import { ProductComponent } from './components/public/pages/product/product.component';
 import { LoginGuard } from './guards/login.guard';
 import { RegisterComponent } from './components/public/pages/register/register.component';
+import { ProfileComponent } from './components/user/pages/profile/profile.component';
 
 const routes: Routes = [
   {path:"",pathMatch:"full",component:ProductComponent},
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path:"products/category/:categoryId",component:ProductComponent},
   {path:"products/add", component:ProductAddComponent, canActivate:[LoginGuard]},
   {path:"login", component:LoginComponent},
-  {path:"register", component:RegisterComponent}
+  {path:"register", component:RegisterComponent},
+  {path:"profile", component:ProfileComponent}
 
 ];
 

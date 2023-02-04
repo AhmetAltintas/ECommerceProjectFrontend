@@ -2,8 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable } from 'rxjs';
+import { UpdatePasswordDTO } from '../models/entities/dtos/updatePasswordDTO';
 import { LoginModel } from '../models/loginModel';
 import { RegisterModel } from '../models/registerModel';
+import { ResponseModel } from '../models/responseModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { TokenModel } from '../models/tokenModel';
 import { LocalStorageService } from './local-storage.service';
@@ -26,6 +28,11 @@ export class AuthService {
 
   register(registerModel:RegisterModel):Observable<SingleResponseModel<TokenModel>> {
     return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl + 'register', registerModel);
+  }
+
+  logOut() {
+    this.localStorageService.remove("token")
+    window.location.reload()
   }
 
   isAuthenticated(){
@@ -69,5 +76,9 @@ export class AuthService {
     let nameidentifierString = Object.keys(decodedToken).filter(t=>t.endsWith("/nameidentifier"))[0]
     let userId: number = decodedToken[nameidentifierString]
     return userId
+  }
+
+  updatePassword(updatePasswordDTO:UpdatePasswordDTO):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl + "updatePassword", updatePasswordDTO)
   }
 }

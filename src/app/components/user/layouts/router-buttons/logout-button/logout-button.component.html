@@ -1,0 +1,8 @@
+<button
+  type="button"
+  [class]="classFromParent"
+  (click)="logOut()"
+  *ngIf="loggedIn()"
+>
+  {{ innerHTML }}
+</button>
