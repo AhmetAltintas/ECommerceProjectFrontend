@@ -6,15 +6,17 @@ import { ProductComponent } from './components/public/pages/product/product.comp
 import { LoginGuard } from './guards/login.guard';
 import { RegisterComponent } from './components/public/pages/register/register.component';
 import { ProfileComponent } from './components/user/pages/profile/profile.component';
+import { GuestGuard } from './guards/guest.guard';
+import { AdminGuard } from './guards/admin.guard';
 
 const routes: Routes = [
   {path:"",pathMatch:"full",component:ProductComponent},
   {path:"products",component:ProductComponent},
   {path:"products/category/:categoryId",component:ProductComponent},
-  {path:"products/add", component:ProductAddComponent, canActivate:[LoginGuard]},
-  {path:"login", component:LoginComponent},
-  {path:"register", component:RegisterComponent},
-  {path:"profile", component:ProfileComponent}
+  {path:"products/add", component:ProductAddComponent, canActivate:[AdminGuard]},
+  {path:"login", component:LoginComponent, canActivate: [GuestGuard] },
+  {path:"register", component:RegisterComponent, canActivate: [GuestGuard] },
+  {path:"profile", component:ProfileComponent, canActivate: [LoginGuard]}
 
 ];
 
