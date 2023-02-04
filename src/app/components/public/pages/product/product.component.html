@@ -5,7 +5,8 @@
 >
   <span class="visually-hidden">Loading...</span>
 </div>
-
+<app-category></app-category>
+<br />
 <div class="mb-3">
   <label for="filterText" class="form-label">Ürün Ara</label>
   <input
@@ -35,9 +36,11 @@
         </div>
       </div>
       <div>
-        <app-product-image-for-base-grid [currentProductIdFromParent]="product.productId"></app-product-image-for-base-grid>
+        <app-product-image-for-base-grid
+          [currentProductIdFromParent]="product.productId"
+        ></app-product-image-for-base-grid>
+      </div>
     </div>
-  </div>
     <strong
       ><p>{{ product.productName }}</p></strong
     >
@@ -46,4 +49,3 @@
     </button>
   </div>
 </div>
-

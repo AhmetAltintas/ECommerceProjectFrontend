@@ -11,4 +11,12 @@ export class RouterService {
   productsPageByCategoryId(categoryId:number){
     if (categoryId>0) this.router.navigate(["products/category/" + categoryId])
   }
+
+  registerPage(){
+    this.router.navigate(["register"])
+  }
+
+  loginPage(){
+    this.router.navigate(["login"])
+  }
 }
