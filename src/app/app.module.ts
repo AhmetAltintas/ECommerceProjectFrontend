@@ -18,6 +18,10 @@ import { ProductAddComponent } from './components/admin/pages/product-add/produc
 import { LoginComponent } from './components/public/pages/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ProductImageForBaseGridComponent } from './components/public/layouts/product-image-for-base-grid/product-image-for-base-grid.component';
+import { AdminChildComponentBaseComponent } from './components/admin/bases/admin-child-component-base/admin-child-component-base.component';
+import { CommonChildComponentBaseComponent } from './components/public/bases/common-child-component-base/common-child-component-base.component';
+import { PublicChildComponentBaseComponent } from './components/public/bases/public-child-component-base/public-child-component-base.component';
+import { UserChildComponentBaseComponent } from './components/user/bases/user-child-component-base/user-child-component-base.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,10 @@ import { ProductImageForBaseGridComponent } from './components/public/layouts/pr
     ProductAddComponent,
     LoginComponent,
     ProductImageForBaseGridComponent,
+    AdminChildComponentBaseComponent,
+    CommonChildComponentBaseComponent,
+    PublicChildComponentBaseComponent,
+    UserChildComponentBaseComponent,
   ],
   imports: [
     BrowserModule,
