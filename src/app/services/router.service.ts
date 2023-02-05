@@ -27,4 +27,12 @@ export class RouterService {
   profilePage(){ 
     this.router.navigate(["profile"])
   }
+
+  addProductPage(){
+    this.router.navigate(["products/add"])
+  }
+
+  productDetailListPage(){
+    this.router.navigate(["product-detail-list"])
+  }
 }
