@@ -1,0 +1,25 @@
+<div class="dropdown" *ngIf="isAdmin()">
+  <button
+    [class]="classFromParent"
+    type="button"
+    id="dropdownMenuButton"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    {{ innerHTML }}
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li>
+      <app-add-product-page-button
+        classFromParent="dropdown-item"
+      ></app-add-product-page-button>
+    </li>
+    <li><hr class="dropdown-divider" /></li>
+
+    <li>
+      <app-product-detail-list-page-button
+        classFromParent="dropdown-item"
+      ></app-product-detail-list-page-button>
+    </li>
+  </ul>
+</div>

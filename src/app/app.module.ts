@@ -10,11 +10,12 @@ import { ProductComponent } from './components/public/pages/product/product.comp
 import { CategoryComponent } from './components/public/layouts/category/category.component';
 import { NaviComponent } from './components/public/layouts/navi/navi.component';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
-import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { ProductFilterPipe } from './pipes/product-filter.pipe';
+import { ProductDetailFilterPipe } from './pipes/product-detail-filter.pipe';
 
 import { ToastrModule } from 'ngx-toastr';
 import { CartSummaryComponent } from './components/public/layouts/cart-summary/cart-summary.component';
-import { ProductAddComponent } from './components/admin/pages/product-add/product-add.component';
+import { ProductAddComponent } from './components/admin/pages/adds/product-add/product-add.component';
 import { LoginComponent } from './components/public/pages/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ProductImageForBaseGridComponent } from './components/public/layouts/product-image-for-base-grid/product-image-for-base-grid.component';
@@ -33,6 +34,13 @@ import { ProfileComponent } from './components/user/pages/profile/profile.compon
 import { UpdateEmailComponent } from './components/user/layouts/updates/update-email/update-email.component';
 import { UpdateFirstAndLastNameComponent } from './components/user/layouts/updates/update-first-and-last-name/update-first-and-last-name.component';
 import { UpdatePasswordComponent } from './components/user/layouts/updates/update-password/update-password.component';
+import { AdministrationDropdownComponent } from './components/admin/layouts/administration-dropdown/administration-dropdown.component';
+import { AddProductPageButtonComponent } from './components/admin/layouts/router-buttons/add-product-page-button/add-product-page-button.component';
+import { ProductDetailListComponent } from './components/admin/pages/lists/product-detail-list/product-detail-list.component';
+import { ProductDetailListPageButtonComponent } from './components/admin/layouts/router-buttons/product-detail-list-page-button/product-detail-list-page-button.component';
+import { UpdateProductComponent } from './components/admin/layouts/updates/update-product/update-product.component';
+import { DeleteProductComponent } from './components/admin/layouts/deletes/delete-product/delete-product.component';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +49,6 @@ import { UpdatePasswordComponent } from './components/user/layouts/updates/updat
     CategoryComponent,
     NaviComponent,
     VatAddedPipe,
-    FilterPipePipe,
     CartSummaryComponent,
     ProductAddComponent,
     LoginComponent,
@@ -61,6 +68,14 @@ import { UpdatePasswordComponent } from './components/user/layouts/updates/updat
     UpdateEmailComponent,
     UpdateFirstAndLastNameComponent,
     UpdatePasswordComponent,
+    AdministrationDropdownComponent,
+    AddProductPageButtonComponent,
+    ProductDetailListComponent,
+    ProductDetailListPageButtonComponent,
+    ProductFilterPipe,
+    ProductDetailFilterPipe,
+    UpdateProductComponent,
+    DeleteProductComponent,
   ],
   imports: [
     BrowserModule,

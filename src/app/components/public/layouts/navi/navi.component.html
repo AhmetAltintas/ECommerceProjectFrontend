@@ -1,72 +1,46 @@
-<!-- <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Ana Sayfa</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <app-cart-summary></app-cart-summary>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav> -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    &nbsp;<a class="navbar-brand"
+      ><app-home-page-button style="font-weight: 600"></app-home-page-button
+    ></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      &nbsp;<a class="navbar-brand"><app-home-page-button style="font-weight:600"></app-home-page-button></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <br>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item active" type="button">
-            <!-- <app-administration-dropdown ></app-administration-dropdown> -->
-          </li>
-        </ul>
-        <form class="d-flex">
-          <div class="ms-2">
-            <app-cart-summary></app-cart-summary>
-          </div>
-          <div class="ms-2">
-            <app-account-options></app-account-options>
-          </div>
-          &nbsp;
-          <div>
-            <app-login-page-button
-              classFromParent="btn btn-outline-dark"
-            ></app-login-page-button>
-          </div>
-          <div class="ms-2">
-            <app-register-page-button
-              classFromParent="btn btn-outline-dark"
-            ></app-register-page-button>
-          </div>
-        </form>
-      </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <br />
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item active" type="button">
+          <app-administration-dropdown></app-administration-dropdown>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <div class="ms-2">
+          <app-cart-summary></app-cart-summary>
+        </div>
+        <div class="ms-2">
+          <app-account-options></app-account-options>
+        </div>
+        &nbsp;
+        <div>
+          <app-login-page-button
+            classFromParent="btn btn-outline-dark"
+          ></app-login-page-button>
+        </div>
+        <div class="ms-2">
+          <app-register-page-button
+            classFromParent="btn btn-outline-dark"
+          ></app-register-page-button>
+        </div>
+      </form>
     </div>
-  </nav>
-  
+  </div>
+</nav>

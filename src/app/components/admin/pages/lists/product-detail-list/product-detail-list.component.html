@@ -1,0 +1,45 @@
+<div id="productList">
+    <h4>Ürün Listesi</h4>
+    <input type="text" id="filterText" [(ngModel)]="filterText" placeholder="Arama metni giriniz" class="form-control">
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Kategori Id</th>
+                <th>Ürün Adı</th>
+                <th>Birim Fiyatı</th>
+                <th>Kdv'li Fiyatı</th>
+                <th>Stok Adedi</th>
+                <th>Kategori Adı</th>
+                <th>Seçenekler</th>
+                <th>Ek Seçenekler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of productDetailDTOs | productDetailFilter:filterText">
+                <td>{{product.productId}}</td>
+                <td>{{product.categoryId}}</td>
+                <td>{{product.productName}}</td>
+                <td>{{product.unitPrice | currency }}</td>
+                <td>{{product.unitPrice | vatAdded : 18 | currency }}</td>
+                <td>{{product.unitsInStock}}</td>
+                <td>{{product.categoryName}}</td>
+                <td>
+                    <div class="d-flex justify-content-between" *ngIf="productDetailDTOs">
+                        <app-update-product classFromParent="btn btn-success" [currentProductFromParent]="getByIdFromInMemory(product.productId)"></app-update-product>
+                        &nbsp;
+                        <app-delete-product classFromParent="btn btn-danger" [currentProductFromParent]="getByIdFromInMemory(product.productId)"></app-delete-product>
+                    </div>  
+                </td>
+                <td>
+                    <div class="d-flex justify-content-between">
+                        <!-- <app-add-car-image-page-button classFromParent="btn btn-primary" [currentCarIdFromParent]="carDetailDTO.id" [innerHTML]="'Resim/Ekle'"></app-add-car-image-page-button>
+                        &nbsp;
+                        <app-delete-car-image classFromParent="btn btn-danger" [currentCarImagesFromParent]="carDetailDTO.carImages" innerHTML="Resim/Sil"></app-delete-car-image> -->
+                    </div>  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

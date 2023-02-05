@@ -1,0 +1,8 @@
+<div
+  type="button"
+  (click)="routeToAddProductPage()"
+  *ngIf="isAdmin()"
+  [class]="classFromParent"
+>
+  {{ innerHTML }}
+</div>
