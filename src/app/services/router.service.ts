@@ -39,4 +39,8 @@ export class RouterService {
   addProductImagePageByProductId(productId: number){
     this.router.navigate(["add-product-image/" + productId])
   }
+
+  myCartPage(){
+    this.router.navigate(["my-cart"])
+  }
 }

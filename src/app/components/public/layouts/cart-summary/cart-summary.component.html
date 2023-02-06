@@ -11,17 +11,12 @@
     <ul class="dropdown-menu">
       <li *ngFor="let cartItem of cartItems">
         <a class="dropdown-item">
-          <span class="badge text-bg-secondary">{{ cartItem.quantity }} </span
-          >&nbsp; {{ cartItem.product.productName }} &nbsp;
-          <span
-            (click)="removeFromCart(cartItem.product)"
-            class="badge text-bg-secondary"
-            >Sil</span
-          ></a
-        >
+          <span class="badge text-bg-secondary">{{ cartItem.quantity }} </span> &nbsp; {{ cartItem.product.productName }} &nbsp;
+          <span (click)="removeFromCart(cartItem.product)" class="badge text-bg-secondary">Sil</span></a>
       </li>
-      <li><hr class="dropdown-divider" /></li>
-      <li><a class="dropdown-item">Sepete git</a></li>
+      <li><hr class="dropdown-divider"/></li>
+      <li><a class="dropdown-item" type="button" (click)="clearCart()">Sepeti temizle</a></li>
+      <li><a class="dropdown-item" type="button" ><app-route-to-my-cart-component-button [currentCartItemsFromParent]="currentCartItems" ></app-route-to-my-cart-component-button></a></li>
     </ul>
   </li>
 </div>

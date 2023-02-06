@@ -1,0 +1,24 @@
+<thead>
+   <h5>Sepetim</h5> 
+</thead>
+
+<tbody>
+    <div class="container" *ngIf="currentCartItemsFromParent.length >= 1">
+  <ul>
+    <li *ngFor="let cartItem of currentCartItemsFromParent">
+      <a>
+        <span class="badge text-bg-secondary">{{ cartItem.quantity }} </span
+        >&nbsp; {{ cartItem.product.productName }} &nbsp;
+        <span
+          (click)="removeFromCart(cartItem.product)"
+          class="badge text-bg-secondary"
+          >Sil</span
+        ></a
+      >
+    </li>
+    <li>
+      <a (click)="clearCart()" type="button">Sepeti temizle</a>
+    </li>
+  </ul>
+</div>
+</tbody>

@@ -10,6 +10,7 @@ import { GuestGuard } from './guards/guest.guard';
 import { AdminGuard } from './guards/admin.guard';
 import { ProductDetailListComponent } from './components/admin/pages/lists/product-detail-list/product-detail-list.component';
 import { AddProductImageComponent } from './components/admin/pages/adds/add-product-image/add-product-image.component';
+import { MyCartComponent } from './components/public/pages/my-cart/my-cart.component';
 
 const routes: Routes = [
   {path:"",pathMatch:"full",component:ProductComponent},
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path:"register", component:RegisterComponent, canActivate: [GuestGuard] },
   {path:"profile", component:ProfileComponent, canActivate: [LoginGuard]},
   {path:"product-detail-list", component:ProductDetailListComponent, canActivate:[AdminGuard]},
-  {path:"add-product-image/:productId", component:AddProductImageComponent, canActivate: [AdminGuard]}
+  {path:"add-product-image/:productId", component:AddProductImageComponent, canActivate: [AdminGuard]},
+  {path:"my-cart", component: MyCartComponent}
 
 ];
 

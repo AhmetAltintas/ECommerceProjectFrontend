@@ -43,6 +43,8 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 import { AddProductImagePageButtonComponent } from './components/admin/layouts/router-buttons/add-product-image-page-button/add-product-image-page-button.component';
 import { AddProductImageComponent } from './components/admin/pages/adds/add-product-image/add-product-image.component';
 import { DeleteProductImageComponent } from './components/admin/layouts/deletes/delete-product-image/delete-product-image.component';
+import { MyCartComponent } from './components/public/pages/my-cart/my-cart.component';
+import { RouteToMyCartComponentButtonComponent } from './components/public/layouts/router-buttons/route-to-my-cart-component-button/route-to-my-cart-component-button.component';
 
 
 @NgModule({
@@ -82,6 +84,8 @@ import { DeleteProductImageComponent } from './components/admin/layouts/deletes/
     AddProductImagePageButtonComponent,
     AddProductImageComponent,
     DeleteProductImageComponent,
+    MyCartComponent,
+    RouteToMyCartComponentButtonComponent,
   ],
   imports: [
     BrowserModule,
