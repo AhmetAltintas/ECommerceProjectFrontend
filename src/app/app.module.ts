@@ -17,7 +17,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { CartSummaryComponent } from './components/public/layouts/cart-summary/cart-summary.component';
 import { ProductAddComponent } from './components/admin/pages/adds/product-add/product-add.component';
 import { LoginComponent } from './components/public/pages/login/login.component';
-import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ProductImageForBaseGridComponent } from './components/public/layouts/product-image-for-base-grid/product-image-for-base-grid.component';
 import { AdminChildComponentBaseComponent } from './components/admin/bases/admin-child-component-base/admin-child-component-base.component';
 import { CommonChildComponentBaseComponent } from './components/public/bases/common-child-component-base/common-child-component-base.component';
@@ -40,6 +39,7 @@ import { ProductDetailListComponent } from './components/admin/pages/lists/produ
 import { ProductDetailListPageButtonComponent } from './components/admin/layouts/router-buttons/product-detail-list-page-button/product-detail-list-page-button.component';
 import { UpdateProductComponent } from './components/admin/layouts/updates/update-product/update-product.component';
 import { DeleteProductComponent } from './components/admin/layouts/deletes/delete-product/delete-product.component';
+import { TokenInterceptor } from './interceptors/token.interceptor';
 
 
 @NgModule({
@@ -89,7 +89,7 @@ import { DeleteProductComponent } from './components/admin/layouts/deletes/delet
     }),
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
 })
